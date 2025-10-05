@@ -10,9 +10,8 @@
 ## Run
 - Remove the existing git remote: `git remote remove origin`
 - Initialize a new git repository: `git init`
-- Run `cp .env.sample .env`
+- Run `cp .env.sample .env` 
 - Install FE and BE dependencies
-- Run `./scripts/copy_dot_env.sh` to copy the .env file from the tac-2 directory. Note, the tac-2 codebase may not exists, proceed either way.
 
 ## Report
 - Output the work you've just done in a concise bullet point list.
