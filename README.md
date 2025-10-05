@@ -5,7 +5,7 @@ A web application that converts natural language queries to SQL using AI, built 
 ## Features
 
 - 🗣️ Natural language to SQL conversion using OpenAI or Anthropic
-- 📁 Drag-and-drop file upload (.csv and .json)
+- 📁 Drag-and-drop file upload (.csv, .json, and .jsonl)
 - 📊 Interactive table results display
 - 🔒 SQL injection protection
 - ⚡ Fast development with Vite and uv
@@ -83,7 +83,10 @@ npm run dev
 
 1. **Upload Data**: Click "Upload Data" to open the modal
    - Use sample data buttons for quick testing
-   - Or drag and drop your own .csv or .json files
+   - Or drag and drop your own .csv, .json, or .jsonl files
+   - JSONL (JSON Lines) files contain one JSON object per line, ideal for logs and streaming data
+   - Nested objects are automatically flattened (e.g., `user.name` becomes `user__name`)
+   - Arrays are expanded with indices (e.g., `tags[0]` becomes `tags_0`)
    - Uploading a file with the same name will overwrite the existing table
 2. **Query Your Data**: Type a natural language query like "Show me all users who signed up last week"
    - Press `Cmd+Enter` (Mac) or `Ctrl+Enter` (Windows/Linux) to run the query
@@ -135,11 +138,12 @@ npm run preview            # Preview production build
 
 ## API Endpoints
 
-- `POST /api/upload` - Upload CSV/JSON file
+- `POST /api/upload` - Upload CSV/JSON/JSONL file
 - `POST /api/query` - Process natural language query
 - `GET /api/schema` - Get database schema
 - `POST /api/insights` - Generate column insights
 - `GET /api/health` - Health check
+- `DELETE /api/table/{table_name}` - Delete a table
 
 ## Security
 
@@ -192,7 +196,7 @@ uv run pytest tests/test_sql_injection.py -v
 ### Additional Security Features
 
 - CORS configured for local development only
-- File upload validation (CSV and JSON only)
+- File upload validation (CSV, JSON, and JSONL only)
 - Comprehensive error logging without exposing sensitive data
 - Database operations are isolated with proper connection handling
 

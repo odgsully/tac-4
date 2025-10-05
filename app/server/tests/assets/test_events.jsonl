@@ -1,0 +1,5 @@
+{"event_id": 1, "event_type": "page_view", "user_id": 100, "page": "/home", "timestamp": "2024-01-15T08:00:00Z", "duration": 5.2}
+{"event_id": 2, "event_type": "button_click", "user_id": 100, "page": "/home", "timestamp": "2024-01-15T08:00:05Z", "duration": 0.1}
+{"event_id": 3, "event_type": "page_view", "user_id": 101, "page": "/products", "timestamp": "2024-01-15T08:01:00Z", "duration": 12.8}
+{"event_id": 4, "event_type": "form_submit", "user_id": 101, "page": "/contact", "timestamp": "2024-01-15T08:02:30Z", "duration": 1.5}
+{"event_id": 5, "event_type": "page_view", "user_id": 102, "page": "/about", "timestamp": "2024-01-15T08:03:00Z", "duration": 8.9}
